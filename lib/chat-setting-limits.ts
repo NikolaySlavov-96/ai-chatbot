@@ -54,7 +54,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   },
 
   // GOOGLE MODELS
-  
   "gemini-1.5-flash": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
@@ -78,6 +77,12 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 12288
+  },
+  "gemini-1.5-pro-exp-0801": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
+    MAX_CONTEXT_LENGTH: 1040384
   },
 
   // MISTRAL MODELS
@@ -105,6 +110,30 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 2000,
     MAX_CONTEXT_LENGTH: 32000
   },
+  "open-mistral-nemo": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 32000
+  },
+  "codestral-mamba-2407": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 32000
+  },
+  "codestral-2405": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 32000
+  },
+  "mistral-large-2407": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 128000
+  },
 
   // GROQ MODELS
   "llama3-8b-8192": {
@@ -131,6 +160,30 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 8192,
     MAX_CONTEXT_LENGTH: 8192
   },
+  "llama-3.1-70b-versatile": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 131072
+  },
+  "llama-3.1-8b-instant": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 131072
+  },
+  "llama3-groq-70b-8192-tool-use-preview": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 8192
+  },
+  "llama3-groq-8b-8192-tool-use-preview": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 8192
+  },
 
   // OPENAI MODELS
   "gpt-3.5-turbo": {
@@ -139,6 +192,12 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 4096
     // MAX_CONTEXT_LENGTH: 16385 (TODO: Change this back to 16385 when OpenAI bumps the model)
+  },
+  "gpt-4-turbo": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 128000
   },
   "gpt-4-turbo-preview": {
     MIN_TEMPERATURE: 0.0,
@@ -162,6 +221,24 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 128000
+  },
+  "gpt-4.1-nano": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 32768,
+    MAX_CONTEXT_LENGTH: 1000000
+  },
+  "gpt-4.1-mini": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 32768,
+    MAX_CONTEXT_LENGTH: 1000000
+  },
+  "o1-preview": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 32768,
     MAX_CONTEXT_LENGTH: 128000
   },
 
@@ -243,5 +320,17 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
     MAX_CONTEXT_LENGTH: 12000
-  }
+  },
+  // "mistral-large-2402": {
+  //   MIN_TEMPERATURE: 0,
+  //   MAX_TEMPERATURE: 0,
+  //   MAX_TOKEN_OUTPUT_LENGTH: 0,
+  //   MAX_CONTEXT_LENGTH: 0
+  // },
+  // "llama-3.1-405b-reasoning": {
+  //   MIN_TEMPERATURE: 0,
+  //   MAX_TEMPERATURE: 0,
+  //   MAX_TOKEN_OUTPUT_LENGTH: 0,
+  //   MAX_CONTEXT_LENGTH: 0
+  // }
 }

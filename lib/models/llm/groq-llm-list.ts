@@ -32,21 +32,6 @@ const LLaMA3_70B: LLM = {
   }
 }
 
-const MIXTRAL_8X7B: LLM = {
-  modelId: "mixtral-8x7b-32768",
-  modelName: "Mixtral-8x7b-Instruct-v0.1",
-  provider: "groq",
-  hostedId: "mixtral-8x7b-32768",
-  platformLink: GROQ_PLATORM_LINK,
-  imageInput: false,
-  pricing: {
-    currency: "USD",
-    unit: "1M tokens",
-    inputCost: 0.27,
-    outputCost: 0.27
-  }
-}
-
 const GEMMA_7B_IT: LLM = {
   modelId: "gemma-7b-it",
   modelName: "Gemma-7b-It",
@@ -62,9 +47,39 @@ const GEMMA_7B_IT: LLM = {
   }
 }
 
+
+const LLaMA31_405B: LLM = {
+  modelId: "llama-3.1-405b-reasoning",
+  modelName: "LLaMA31-405b-chat",
+  provider: "groq",
+  hostedId: "llama-3.1-405b-reasoning",
+  platformLink: GROQ_PLATORM_LINK,
+  imageInput: false
+}
+
+const LLaMA31_8B: LLM = {
+  modelId: "llama-3.1-8b-instant",
+  modelName: "LLaMA31-8b-chat",
+  provider: "groq",
+  hostedId: "llama-3.1-8b-instant",
+  platformLink: GROQ_PLATORM_LINK,
+  imageInput: false
+}
+
+const LLaMA3_70B_TOOL: LLM = {
+  modelId: "llama3-groq-70b-8192-tool-use-preview",
+  modelName: "LLaMA3-Groq-70b-Tool-Use",
+  provider: "groq",
+  hostedId: "llama3-groq-70b-8192-tool-use-preview",
+  platformLink: GROQ_PLATORM_LINK,
+  imageInput: false
+}
+
 export const GROQ_LLM_LIST: LLM[] = [
   LLaMA3_8B,
   LLaMA3_70B,
-  MIXTRAL_8X7B,
-  GEMMA_7B_IT
+  GEMMA_7B_IT,
+  LLaMA31_405B,
+  LLaMA3_70B_TOOL,
+  LLaMA31_8B,
 ]

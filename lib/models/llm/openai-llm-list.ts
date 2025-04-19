@@ -34,6 +34,24 @@ const GPT4Turbo: LLM = {
   }
 }
 
+const GPT4TurboPLus: LLM = {
+  modelId: "gpt-4-turbo",
+  modelName: "GPT-4 Turbo - upgraded",
+  provider: "openai",
+  hostedId: "gpt-4-turbo",
+  platformLink: OPENAI_PLATORM_LINK,
+  imageInput: true
+}
+
+const GPT4O: LLM = {
+  modelId: "gpt-4o",
+  modelName: "GPT-4o",
+  provider: "openai",
+  hostedId: "gpt-4o",
+  platformLink: OPENAI_PLATORM_LINK,
+  imageInput: true
+}
+
 // GPT-4 Vision (UPDATED 12/18/23)
 const GPT4Vision: LLM = {
   modelId: "gpt-4-vision-preview",
@@ -81,10 +99,44 @@ const GPT3_5Turbo: LLM = {
   }
 }
 
+const GPT41PreviewNano: LLM = {
+  modelId: "gpt-4.1-nano",
+  modelName: "GPT 4.1 nano",
+  provider: "openai",
+  hostedId: "gpt-4.1-nano",
+  platformLink: OPENAI_PLATORM_LINK,
+  imageInput: true
+}
+
+const GPT41PreviewMini: LLM = {
+  modelId: "gpt-4.1-mini",
+  modelName: "GPT 4.1 mini",
+  provider: "openai",
+  hostedId: "gpt-4.1-mini",
+  platformLink: OPENAI_PLATORM_LINK,
+  imageInput: true
+}
+
+const o1: LLM = {
+  modelId: "o1-preview",
+  modelName: "o1",
+  provider: "openai",
+  hostedId: "o1-preview",
+  platformLink: OPENAI_PLATORM_LINK,
+  imageInput: true
+}
+
+
+
 export const OPENAI_LLM_LIST: LLM[] = [
-  GPT4o,
-  GPT4Turbo,
-  GPT4Vision,
+  GPT3_5Turbo,
   GPT4,
-  GPT3_5Turbo
+  GPT41PreviewMini,
+  GPT41PreviewNano,
+  GPT4o,
+  GPT4O,
+  GPT4Turbo,
+  GPT4TurboPLus,
+  GPT4Vision,
+  o1,
 ]
