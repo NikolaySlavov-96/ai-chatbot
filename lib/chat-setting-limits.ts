@@ -327,10 +327,10 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   //   MAX_TOKEN_OUTPUT_LENGTH: 0,
   //   MAX_CONTEXT_LENGTH: 0
   // },
-  // "llama-3.1-405b-reasoning": {
-  //   MIN_TEMPERATURE: 0,
-  //   MAX_TEMPERATURE: 0,
-  //   MAX_TOKEN_OUTPUT_LENGTH: 0,
-  //   MAX_CONTEXT_LENGTH: 0
-  // }
+  "llama-3.1-405b-reasoning": {
+    MIN_TEMPERATURE: 0,
+    MAX_TEMPERATURE: 0,
+    MAX_TOKEN_OUTPUT_LENGTH: 0,
+    MAX_CONTEXT_LENGTH: 0
+  }
 }
