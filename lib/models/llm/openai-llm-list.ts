@@ -43,15 +43,6 @@ const GPT4TurboPLus: LLM = {
   imageInput: true
 }
 
-const GPT4O: LLM = {
-  modelId: "gpt-4o",
-  modelName: "GPT-4o",
-  provider: "openai",
-  hostedId: "gpt-4o",
-  platformLink: OPENAI_PLATORM_LINK,
-  imageInput: true
-}
-
 // GPT-4 Vision (UPDATED 12/18/23)
 const GPT4Vision: LLM = {
   modelId: "gpt-4-vision-preview",
@@ -134,7 +125,6 @@ export const OPENAI_LLM_LIST: LLM[] = [
   GPT41PreviewMini,
   GPT41PreviewNano,
   GPT4o,
-  GPT4O,
   GPT4Turbo,
   GPT4TurboPLus,
   GPT4Vision,
