@@ -210,7 +210,7 @@ export const handleHostedChat = async (
 
   let formattedMessages : any[] = []
   if (provider === "google") {
-    formattedMessages = await adaptMessagesForGoogleGemini(payload, draftMessages)
+    formattedMessages = await adaptMessagesForGoogleGemini(draftMessages)
   } else {
     formattedMessages = draftMessages
   }

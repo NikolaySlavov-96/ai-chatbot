@@ -222,38 +222,13 @@ function adaptSingleMessageForGoogleGemini(message: any) {
   }
 }
 
-function adaptMessagesForGeminiVision(
-  messages: any[]
-) {
-  // Gemini Pro Vision cannot process multiple messages
-  // Reformat, using all texts and last visual only
-
-  const basePrompt = messages[0].parts[0].text
-  const baseRole = messages[0].role
-  const lastMessage = messages[messages.length-1]
-  const visualMessageParts = lastMessage.parts;
-  let visualQueryMessages = [{
-    role: "user",
-    parts: [
-      `${baseRole}:\n${basePrompt}\n\nuser:\n${visualMessageParts[0].text}\n\n`,
-      visualMessageParts.slice(1)
-    ]
-  }]
-  return visualQueryMessages
-}
-
 export async function adaptMessagesForGoogleGemini(
-  payload: ChatPayload,
   messages:  any[]
 ) {
   let geminiMessages = []
   for (let i = 0; i < messages.length; i++) {
     let adaptedMessage = adaptSingleMessageForGoogleGemini(messages[i])
     geminiMessages.push(adaptedMessage)
-  }
-
-  if(payload.chatSettings.model === "gemini-pro-vision") {
-    geminiMessages = adaptMessagesForGeminiVision(geminiMessages)
   }
   return geminiMessages
 }

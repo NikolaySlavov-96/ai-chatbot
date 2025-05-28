@@ -9,25 +9,7 @@ type ChatSettingLimits = {
 
 export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   // ANTHROPIC MODELS
-  "claude-2.1": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 200000
-  },
-  "claude-instant-1.2": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 100000
-  },
   "claude-3-haiku-20240307": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 200000
-  },
-  "claude-3-sonnet-20240229": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
@@ -78,18 +60,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 8192,
     MAX_CONTEXT_LENGTH: 1040384
-  },
-  "gemini-pro": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 2048,
-    MAX_CONTEXT_LENGTH: 30720
-  },
-  "gemini-pro-vision": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 12288
   },
   "gemini-1.5-pro-exp-0801": {
     MIN_TEMPERATURE: 0.0,
@@ -167,12 +137,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 32768
   },
-  "gemma-7b-it": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 8192,
-    MAX_CONTEXT_LENGTH: 8192
-  },
   "llama-3.1-70b-versatile": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
@@ -184,12 +148,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 131072
-  },
-  "llama3-groq-70b-8192-tool-use-preview": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 8192
   },
   "llama3-groq-8b-8192-tool-use-preview": {
     MIN_TEMPERATURE: 0.0,
@@ -213,12 +171,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_CONTEXT_LENGTH: 128000
   },
   "gpt-4-turbo-preview": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 128000
-  },
-  "gpt-4-vision-preview": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
@@ -334,16 +286,4 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
     MAX_CONTEXT_LENGTH: 12000
   },
-  // "mistral-large-2402": {
-  //   MIN_TEMPERATURE: 0,
-  //   MAX_TEMPERATURE: 0,
-  //   MAX_TOKEN_OUTPUT_LENGTH: 0,
-  //   MAX_CONTEXT_LENGTH: 0
-  // },
-  "llama-3.1-405b-reasoning": {
-    MIN_TEMPERATURE: 0,
-    MAX_TEMPERATURE: 0,
-    MAX_TOKEN_OUTPUT_LENGTH: 0,
-    MAX_CONTEXT_LENGTH: 0
-  }
 }
