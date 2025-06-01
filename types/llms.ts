@@ -17,7 +17,6 @@ export type OpenAILLMID =
   | "gpt-4-turbo"
   | "gpt-4.1-nano"
   | "gpt-4.1-mini"
-  | "o1-preview"
   | "gpt-4.1-nano"
   | "gpt-4.1-mini"
 

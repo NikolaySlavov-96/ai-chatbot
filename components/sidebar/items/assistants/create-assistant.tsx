@@ -96,7 +96,6 @@ export const CreateAssistant: FC<CreateAssistantProps> = ({
       "gpt-4o",
       "gpt-4.1-nano",
       "gpt-4.1-mini",
-      "o1-preview",
       "gpt-4.1"
     ]
     const isModelCompatible = compatibleModels.includes(
