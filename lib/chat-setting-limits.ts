@@ -202,79 +202,31 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   },
 
   // PERPLEXITY MODELS
-  "pplx-7b-online": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.99,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "pplx-70b-online": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.99,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "pplx-7b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 8192
-  },
-  "pplx-70b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "mixtral-8x7b-instruct": {
+  "sonar": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 16384,
     MAX_CONTEXT_LENGTH: 16384
   },
-  "mistral-7b-instruct": {
+  "sonar-pro": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 16384,
     MAX_CONTEXT_LENGTH: 16384
   },
-  "llama-2-70b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "codellama-34b-instruct": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "codellama-70b-instruct": {
+  "sonar-reasoning": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 16384,
     MAX_CONTEXT_LENGTH: 16384
   },
-  "sonar-small-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "sonar-small-online": {
+  "sonar-reasoning-pro": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
     MAX_CONTEXT_LENGTH: 12000
   },
-  "sonar-medium-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "sonar-medium-online": {
+  "sonar-deep-research": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
