@@ -15,7 +15,7 @@ const PERPLEXITY_SONAR: LLM = {
 
 const PERPLEXITY_SONAR_PRO: LLM = {
   modelId: "sonar-pro",
-  modelName: "Sonar Medium Online",
+  modelName: "Sonar Pro",
   provider: "perplexity",
   hostedId: "sonar-pro",
   platformLink: PERPLEXITY_PLATFORM_LINK,
