@@ -27,6 +27,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
     models,
     availableHostedModels,
     availableLocalModels,
+    availableOpenRouterModels
   } = useContext(ChatbotUIContext)
 
   const inputRef = useRef<HTMLInputElement>(null)
@@ -60,6 +61,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
     })),
     ...availableHostedModels,
     ...availableLocalModels,
+    ...availableOpenRouterModels
   ]
 
   const groupedModels = allModels.reduce<Record<string, LLM[]>>(
@@ -154,6 +156,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
               .filter(model => {
                 if (tab === "hosted") return model.provider !== "ollama"
                 if (tab === "local") return model.provider === "ollama"
+                if (tab === "openrouter") return model.provider === "openrouter"
               })
               .filter(model =>
                 model.modelName.toLowerCase().includes(search.toLowerCase())

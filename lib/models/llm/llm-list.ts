@@ -22,5 +22,5 @@ export const LLM_LIST_MAP: Record<string, LLM[]> = {
   mistral: MISTRAL_LLM_LIST,
   groq: GROQ_LLM_LIST,
   perplexity: PERPLEXITY_LLM_LIST,
-  anthropic: ANTHROPIC_LLM_LIST,
+  anthropic: ANTHROPIC_LLM_LIST
 }

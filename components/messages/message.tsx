@@ -52,6 +52,7 @@ export const Message: FC<MessageProps> = ({
     setIsGenerating,
     firstTokenReceived,
     availableLocalModels,
+    availableOpenRouterModels,
     chatMessages,
     selectedAssistant,
     chatImages,
@@ -136,6 +137,7 @@ export const Message: FC<MessageProps> = ({
     })),
     ...LLM_LIST,
     ...availableLocalModels,
+    ...availableOpenRouterModels
   ].find(llm => llm.modelId === message.model) as LLM
 
   const messageAssistantImage = assistantImages.find(

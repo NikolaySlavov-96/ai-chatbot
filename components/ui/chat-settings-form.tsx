@@ -97,17 +97,22 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
   onChangeChatSettings,
   showTooltip
 }) => {
-  const { profile, selectedWorkspace, models } =
+  const { profile, selectedWorkspace, availableOpenRouterModels, models } =
     useContext(ChatbotUIContext)
 
   const isCustomModel = models.some(
     model => model.model_id === chatSettings.model
   )
 
+  function findOpenRouterModel(modelId: string) {
+    return availableOpenRouterModels.find(model => model.modelId === modelId)
+  }
+
   const MODEL_LIMITS = CHAT_SETTING_LIMITS[chatSettings.model] || {
     MIN_TEMPERATURE: 0,
     MAX_TEMPERATURE: 1,
-    MAX_CONTEXT_LENGTH: 4096
+    MAX_CONTEXT_LENGTH:
+      findOpenRouterModel(chatSettings.model)?.maxContext || 4096
   }
 
   return (
