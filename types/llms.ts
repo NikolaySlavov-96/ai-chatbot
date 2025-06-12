@@ -7,6 +7,7 @@ export type LLMID =
   | MistralLLMID
   | GroqLLMID
   | PerplexityLLMID
+  | xAiLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
@@ -61,6 +62,9 @@ export type PerplexityLLMID =
   | "sonar-reasoning" // Sonar Reasoning
   | "sonar-reasoning-pro" // Sonar Reasoning Pro
   | "sonar-deep-research" // Sonar Deep Research
+
+export type xAiLLMID =
+  | "grok-3-latest"
 
 export interface LLM {
   modelId: LLMID

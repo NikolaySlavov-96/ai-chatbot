@@ -5,6 +5,7 @@ import { MISTRAL_LLM_LIST } from "./mistral-llm-list"
 import { GROQ_LLM_LIST } from "./groq-llm-list"
 import { OPENAI_LLM_LIST } from "./openai-llm-list"
 import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
+import { X_AI_LLM_LIST } from "./xAi-llm-list"
 
 export const LLM_LIST: LLM[] = [
   ...OPENAI_LLM_LIST,
@@ -23,4 +24,5 @@ export const LLM_LIST_MAP: Record<string, LLM[]> = {
   groq: GROQ_LLM_LIST,
   perplexity: PERPLEXITY_LLM_LIST,
   anthropic: ANTHROPIC_LLM_LIST,
+  xAi: X_AI_LLM_LIST,
 }

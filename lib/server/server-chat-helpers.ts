@@ -45,6 +45,7 @@ function addApiKeysToProfile(profile: Tables<"profiles">) {
     [VALID_ENV_KEYS.MISTRAL_API_KEY]: "mistral_api_key",
     [VALID_ENV_KEYS.GROQ_API_KEY]: "groq_api_key",
     [VALID_ENV_KEYS.PERPLEXITY_API_KEY]: "perplexity_api_key",
+    [VALID_ENV_KEYS.X_AI_API_KEY]: 'xAi_api_key',
   }
 
   for (const [envKey, profileKey] of Object.entries(apiKeys)) {
