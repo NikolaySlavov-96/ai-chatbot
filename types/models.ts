@@ -6,5 +6,4 @@ export type ModelProvider =
   | "groq"
   | "perplexity"
   | "ollama"
-  | "xAi"
   | "custom"

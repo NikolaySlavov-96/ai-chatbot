@@ -11,7 +11,6 @@ export async function GET() {
     mistral: VALID_ENV_KEYS.MISTRAL_API_KEY,
     groq: VALID_ENV_KEYS.GROQ_API_KEY,
     perplexity: VALID_ENV_KEYS.PERPLEXITY_API_KEY,
-    xAi: VALID_ENV_KEYS.X_AI_API_KEY,
   }
 
   const isUsingEnvKeyMap = Object.keys(envKeyMap).reduce<
