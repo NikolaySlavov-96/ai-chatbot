@@ -95,8 +95,7 @@ export async function POST(req: Request) {
 
     let embeddings: any = []
 
-    let openai
-    openai = new OpenAI({
+    const openai = new OpenAI({
       apiKey: profile.openai_api_key || ""
     })
 
