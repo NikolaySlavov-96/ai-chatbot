@@ -113,6 +113,9 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
   const [perplexityAPIKey, setPerplexityAPIKey] = useState(
     profile?.perplexity_api_key || ""
   )
+  const [xAiAPIKey, setXAiAPIKey] = useState(
+    profile?.perplexity_api_key || ""
+  )
 
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState(
     profile?.openrouter_api_key || ""
@@ -144,6 +147,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       image_url: profileImageUrl,
       image_path: profileImagePath,
       openai_api_key: openaiAPIKey,
+      xAi_api_key: xAiAPIKey,
       openai_organization_id: openaiOrgID,
       anthropic_api_key: anthropicAPIKey,
       google_gemini_api_key: googleGeminiAPIKey,
@@ -172,7 +176,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "mistral",
       "groq",
       "perplexity",
-      "openrouter"
+      "openrouter",
+      "xAi",
     ]
 
     providers.forEach(async provider => {
@@ -703,6 +708,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                       type="password"
                       value={perplexityAPIKey}
                       onChange={e => setPerplexityAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
+                {envKeyMap["xAi"] ? (
+                  <Label>X Ai API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>X Ai API Key</Label>
+                    <Input
+                      placeholder="x Ai API Key"
+                      type="password"
+                      value={perplexityAPIKey}
+                      onChange={e => setXAiAPIKey(e.target.value)}
                     />
                   </>
                 )}

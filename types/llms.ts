@@ -7,6 +7,7 @@ export type LLMID =
   | MistralLLMID
   | GroqLLMID
   | PerplexityLLMID
+  | xAiLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
@@ -34,6 +35,10 @@ export type AnthropicLLMID =
   | "claude-3-7-sonnet-latest" // Claude 3.7 Sonnet
   | "claude-opus-4-20250514" // Claude 4 Opus
   | "claude-sonnet-4-20250514" // Claude Sonnet
+
+export type xAiLLMID =
+  | "grok-3-latest"
+
 
 // Mistral Models
 export type MistralLLMID =
