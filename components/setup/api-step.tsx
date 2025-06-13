@@ -9,6 +9,7 @@ interface APIStepProps {
   googleGeminiAPIKey: string
   mistralAPIKey: string
   groqAPIKey: string
+  xAiAPIKey: string
   perplexityAPIKey: string
   onOpenaiAPIKeyChange: (value: string) => void
   onAnthropicAPIKeyChange: (value: string) => void
@@ -16,6 +17,7 @@ interface APIStepProps {
   onMistralAPIKeyChange: (value: string) => void
   onGroqAPIKeyChange: (value: string) => void
   onPerplexityAPIKeyChange: (value: string) => void
+  onXAiAPIKeyChange: (value: string) => void
 }
 
 export const APIStep: FC<APIStepProps> = ({
@@ -24,10 +26,12 @@ export const APIStep: FC<APIStepProps> = ({
   googleGeminiAPIKey,
   mistralAPIKey,
   groqAPIKey,
+  xAiAPIKey,
   perplexityAPIKey,
   onOpenaiAPIKeyChange,
   onAnthropicAPIKeyChange,
   onGoogleGeminiAPIKeyChange,
+  onXAiAPIKeyChange,
   onMistralAPIKeyChange,
   onGroqAPIKeyChange,
   onPerplexityAPIKeyChange
@@ -95,6 +99,17 @@ export const APIStep: FC<APIStepProps> = ({
           type="password"
           value={perplexityAPIKey}
           onChange={e => onPerplexityAPIKeyChange(e.target.value)}
+        />
+      </div>
+
+      <div className="space-y-1">
+        <Label>xAi API Key</Label>
+
+        <Input
+          placeholder="Perplexity API Key"
+          type="password"
+          value={xAiAPIKey}
+          onChange={e => onXAiAPIKeyChange(e.target.value)}
         />
       </div>
     </>

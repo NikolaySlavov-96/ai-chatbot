@@ -47,6 +47,7 @@ export default function SetupPage() {
   const [mistralAPIKey, setMistralAPIKey] = useState("")
   const [groqAPIKey, setGroqAPIKey] = useState("")
   const [perplexityAPIKey, setPerplexityAPIKey] = useState("")
+  const [xAiAPIKey, setXAiAPIKey] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -111,7 +112,8 @@ export default function SetupPage() {
       google_gemini_api_key: googleGeminiAPIKey,
       mistral_api_key: mistralAPIKey,
       groq_api_key: groqAPIKey,
-      perplexity_api_key: perplexityAPIKey
+      perplexity_api_key: perplexityAPIKey,
+      xAi_api_key: xAiAPIKey
     }
 
     const updatedProfile = await updateProfile(profile.id, updateProfilePayload)
@@ -167,6 +169,7 @@ export default function SetupPage() {
               anthropicAPIKey={anthropicAPIKey}
               googleGeminiAPIKey={googleGeminiAPIKey}
               mistralAPIKey={mistralAPIKey}
+              xAiAPIKey={xAiAPIKey}
               groqAPIKey={groqAPIKey}
               perplexityAPIKey={perplexityAPIKey}
               onOpenaiAPIKeyChange={setOpenaiAPIKey}
@@ -175,6 +178,7 @@ export default function SetupPage() {
               onMistralAPIKeyChange={setMistralAPIKey}
               onGroqAPIKeyChange={setGroqAPIKey}
               onPerplexityAPIKeyChange={setPerplexityAPIKey}
+              onXAiAPIKeyChange={setXAiAPIKey}
             />
           </StepContainer>
         )
