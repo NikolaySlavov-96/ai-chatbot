@@ -81,7 +81,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
   const [perplexityAPIKey, setPerplexityAPIKey] = useState(
     profile?.perplexity_api_key || ""
   )
-  const [xAiAPIKey, setXAiAPIKey] = useState(profile?.perplexity_api_key || "")
+  const [xAiAPIKey, setXAiAPIKey] = useState(profile?.xAi_api_key || "")
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
