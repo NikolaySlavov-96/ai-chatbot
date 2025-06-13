@@ -196,9 +196,9 @@ export const SidebarCreateItem: FC<SidebarCreateItemProps> = ({
 
       setCreating(true)
 
-      const newItem = await createFunction(createState)
+      // const newItem = await createFunction(createState)
 
-      setStateFunction((prevItems: any) => [...prevItems, newItem])
+      // setStateFunction((prevItems: any) => [...prevItems, newItem])
 
       onOpenChange(false)
       setCreating(false)

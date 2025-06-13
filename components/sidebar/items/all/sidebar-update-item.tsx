@@ -161,9 +161,9 @@ export const SidebarUpdateItem: FC<SidebarUpdateItemProps> = ({
           setSelectedWorkspaces(workspaces)
         }
 
-        const fetchDataFunction = fetchDataFunctions[contentType]
-        if (!fetchDataFunction) return
-        await fetchDataFunction(item.id)
+        // const fetchDataFunction = fetchDataFunctions[contentType]
+        // if (!fetchDataFunction) return
+        // await fetchDataFunction(item.id)
       }
 
       fetchData()
@@ -200,73 +200,19 @@ export const SidebarUpdateItem: FC<SidebarUpdateItemProps> = ({
   }
 
   const fetchDataFunctions = {
-    chats: null,
-    presets: null,
-    prompts: null,
-    files: null,
-    collections: async (collectionId: string) => {
-      const collectionFiles =
-        await getCollectionFilesByCollectionId(collectionId)
-      setStartingCollectionFiles(collectionFiles.files)
-      setSelectedCollectionFiles([])
-    },
-    assistants: async (assistantId: string) => {
-      const assistantFiles = await getAssistantFilesByAssistantId(assistantId)
-      setStartingAssistantFiles(assistantFiles.files)
-
-      const assistantCollections =
-        await getAssistantCollectionsByAssistantId(assistantId)
-      setStartingAssistantCollections(assistantCollections.collections)
-
-      const assistantTools = await getAssistantToolsByAssistantId(assistantId)
-      setStartingAssistantTools(assistantTools.tools)
-
-      setSelectedAssistantFiles([])
-      setSelectedAssistantCollections([])
-      setSelectedAssistantTools([])
-    },
-    tools: null,
-    models: null
+    chats: null
   }
 
   const fetchWorkpaceFunctions = {
-    chats: null,
-    presets: async (presetId: string) => {
-      const item = await getPresetWorkspacesByPresetId(presetId)
-      return item.workspaces
-    },
-    prompts: async (promptId: string) => {
-      const item = await getPromptWorkspacesByPromptId(promptId)
-      return item.workspaces
-    },
-    files: async (fileId: string) => {
-      const item = await getFileWorkspacesByFileId(fileId)
-      return item.workspaces
-    },
-    collections: async (collectionId: string) => {
-      const item = await getCollectionWorkspacesByCollectionId(collectionId)
-      return item.workspaces
-    },
-    assistants: async (assistantId: string) => {
-      const item = await getAssistantWorkspacesByAssistantId(assistantId)
-      return item.workspaces
-    },
-    tools: async (toolId: string) => {
-      const item = await getToolWorkspacesByToolId(toolId)
-      return item.workspaces
-    },
-    models: async (modelId: string) => {
-      const item = await getModelWorkspacesByModelId(modelId)
-      return item.workspaces
-    }
+    chats: null
   }
 
   const fetchSelectedWorkspaces = async () => {
-    const fetchFunction = fetchWorkpaceFunctions[contentType]
+    // const fetchFunction = fetchWorkpaceFunctions[contentType]
 
-    if (!fetchFunction) return []
+    // if (!fetchFunction) return []
 
-    const workspaces = await fetchFunction(item.id)
+    // const workspaces = await fetchFunction(item.id)
 
     return workspaces
   }
