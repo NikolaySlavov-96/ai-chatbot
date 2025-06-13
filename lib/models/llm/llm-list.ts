@@ -14,7 +14,7 @@ export const LLM_LIST: LLM[] = [
   ...GROQ_LLM_LIST,
   ...PERPLEXITY_LLM_LIST,
   ...ANTHROPIC_LLM_LIST,
-  ...X_AI_LLM_LIST,
+  ...X_AI_LLM_LIST
 ]
 
 export const LLM_LIST_MAP: Record<string, LLM[]> = {
@@ -25,5 +25,5 @@ export const LLM_LIST_MAP: Record<string, LLM[]> = {
   groq: GROQ_LLM_LIST,
   perplexity: PERPLEXITY_LLM_LIST,
   anthropic: ANTHROPIC_LLM_LIST,
-  xAi: X_AI_LLM_LIST,
+  xAi: X_AI_LLM_LIST
 }

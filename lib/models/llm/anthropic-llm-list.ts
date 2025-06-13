@@ -62,7 +62,6 @@ const CLAUDE_3_7_SONNET: LLM = {
   imageInput: true
 }
 
-
 const CLAUDE_OPUS_4: LLM = {
   modelId: "claude-opus-4-20250514",
   modelName: "Claude 4 Opus",
@@ -87,5 +86,5 @@ export const ANTHROPIC_LLM_LIST: LLM[] = [
   CLAUDE_3_5_SONNET,
   CLAUDE_3_7_SONNET,
   CLAUDE_OPUS_4,
-  CLAUDE_SONNET_4,
+  CLAUDE_SONNET_4
 ]

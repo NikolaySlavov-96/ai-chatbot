@@ -113,9 +113,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
   const [perplexityAPIKey, setPerplexityAPIKey] = useState(
     profile?.perplexity_api_key || ""
   )
-  const [xAiAPIKey, setXAiAPIKey] = useState(
-    profile?.perplexity_api_key || ""
-  )
+  const [xAiAPIKey, setXAiAPIKey] = useState(profile?.perplexity_api_key || "")
 
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState(
     profile?.openrouter_api_key || ""
@@ -177,7 +175,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "groq",
       "perplexity",
       "openrouter",
-      "xAi",
+      "xAi"
     ]
 
     providers.forEach(async provider => {

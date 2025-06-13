@@ -41,8 +41,4 @@ const LLaMA31_8B: LLM = {
   imageInput: false
 }
 
-export const GROQ_LLM_LIST: LLM[] = [
-  LLaMA3_8B,
-  LLaMA3_70B,
-  LLaMA31_8B,
-]
+export const GROQ_LLM_LIST: LLM[] = [LLaMA3_8B, LLaMA3_70B, LLaMA31_8B]

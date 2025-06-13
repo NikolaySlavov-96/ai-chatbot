@@ -40,7 +40,7 @@ export const programmingLanguages: languageMap = {
   css: ".css",
   scss: ".scss",
   sass: ".sass",
-  razor: ".cshtml",
+  razor: ".cshtml"
 }
 
 export const generateRandomString = (length: number, lowercase = false) => {

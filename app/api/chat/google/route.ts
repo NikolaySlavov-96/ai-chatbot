@@ -4,13 +4,18 @@ import { ChatSettings } from "@/types"
 
 export const runtime = "edge"
 
-const getLastMessage = (data: { content: string; parts: string[] | { text: string }[] }) => {
+const getLastMessage = (data: {
+  content: string
+  parts: string[] | { text: string }[]
+}) => {
   if (data.content) {
-    return data.content;
+    return data.content
   } else if (data.parts && data.parts.length > 0) {
-    return typeof data.parts[0] === 'string' ? data.parts[0] : data.parts[0]?.text || ''
+    return typeof data.parts[0] === "string"
+      ? data.parts[0]
+      : data.parts[0]?.text || ""
   }
-  return '';
+  return ""
 }
 
 export async function POST(request: Request) {
@@ -25,38 +30,42 @@ export async function POST(request: Request) {
 
     checkApiKey(profile.google_gemini_api_key, "Google")
 
-    const genAI = new GoogleGenAI({ apiKey: profile.google_gemini_api_key || "" })
+    const genAI = new GoogleGenAI({
+      apiKey: profile.google_gemini_api_key || ""
+    })
 
     const lastMessage = messages.pop()
 
-    let formattedHistory = [];
+    let formattedHistory = []
     if (messages.length > 0) {
-      if (messages[0].role !== 'user') {
-        formattedHistory = messages.slice(1);
+      if (messages[0].role !== "user") {
+        formattedHistory = messages.slice(1)
       } else {
-        formattedHistory = messages;
+        formattedHistory = messages
       }
     }
 
     const response = await genAI.chats.create({
       model: chatSettings.model,
       history: formattedHistory.map(m => {
-        let role = m.role;
-        if (role === 'assistant') {
-          role = 'model'
+        let role = m.role
+        if (role === "assistant") {
+          role = "model"
         }
 
-        const messageText = getLastMessage(m);
+        const messageText = getLastMessage(m)
         return {
           role,
           parts: [{ text: messageText }]
         }
       })
-    });
+    })
 
-    const lastMessageText = getLastMessage(lastMessage);
+    const lastMessageText = getLastMessage(lastMessage)
 
-    const stream = await response.sendMessageStream({ message: lastMessageText });
+    const stream = await response.sendMessageStream({
+      message: lastMessageText
+    })
 
     const encoder = new TextEncoder()
     const readableStream = new ReadableStream({
@@ -72,7 +81,6 @@ export async function POST(request: Request) {
     return new Response(readableStream, {
       headers: { "Content-Type": "text/plain" }
     })
-
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500

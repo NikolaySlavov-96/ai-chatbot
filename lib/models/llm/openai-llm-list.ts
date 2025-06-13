@@ -93,7 +93,6 @@ const GPT41PreviewMini: LLM = {
   imageInput: true
 }
 
-
 export const OPENAI_LLM_LIST: LLM[] = [
   GPT3_5Turbo,
   GPT4,
@@ -101,5 +100,5 @@ export const OPENAI_LLM_LIST: LLM[] = [
   GPT41PreviewNano,
   GPT4o,
   GPT4Turbo,
-  GPT4TurboPLus,
+  GPT4TurboPLus
 ]

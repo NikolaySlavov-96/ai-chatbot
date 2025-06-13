@@ -36,5 +36,5 @@ const GoogleGemini25Pro: LLM = {
 export const GOOGLE_LLM_LIST: LLM[] = [
   GEMINI_1_5_PRO,
   GEMINI_1_5_FLASH,
-  GoogleGemini25Pro,
+  GoogleGemini25Pro
 ]

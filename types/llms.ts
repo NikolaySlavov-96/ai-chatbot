@@ -38,7 +38,10 @@ export type AnthropicLLMID =
 
 export type xAiLLMID =
   | "grok-3-latest"
-
+  | "grok-3-mini-latest"
+  | "grok-2-vision-latest"
+  | "grok-2-image-latest"
+  | "grok-2-latest"
 
 // Mistral Models
 export type MistralLLMID =

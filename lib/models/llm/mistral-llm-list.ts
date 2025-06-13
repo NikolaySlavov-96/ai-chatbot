@@ -46,7 +46,6 @@ const MISTRAL_MEDIUM: LLM = {
   }
 }
 
-
 const OPEN_MISTRAL_NEMO: LLM = {
   modelId: "open-mistral-nemo",
   modelName: "Open Mistral Nemo",
@@ -107,5 +106,5 @@ export const MISTRAL_LLM_LIST: LLM[] = [
   OPEN_MISTRAL_NEMO,
   CODESTRAL_MAMBA_2407,
   CODESTRAL_2405,
-  MISTRAL_LARGE_2407,
+  MISTRAL_LARGE_2407
 ]
