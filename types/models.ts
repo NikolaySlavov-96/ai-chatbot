@@ -6,6 +6,5 @@ export type ModelProvider =
   | "groq"
   | "perplexity"
   | "ollama"
-  | "openrouter"
   | "custom"
   | "xAi"

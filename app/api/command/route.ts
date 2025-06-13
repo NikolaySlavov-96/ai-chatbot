@@ -16,8 +16,7 @@ export async function POST(request: Request) {
     checkApiKey(profile.openai_api_key, "OpenAI")
 
     const openai = new OpenAI({
-      apiKey: profile.openai_api_key || "",
-      organization: profile.openai_organization_id
+      apiKey: profile.openai_api_key || ""
     })
 
     const response = await openai.chat.completions.create({

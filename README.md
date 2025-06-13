@@ -1,6 +1,5 @@
 # AI Chatbot
 
-
 ## Updating
 
 In your terminal at the root of your local Chatbot UI repository, run:
@@ -147,7 +146,7 @@ Here you will get the values for the following environment variables:
 
 - `Project Ref`: Found in "General settings" as "Reference ID"
 
-- `Project ID`: Found in the URL of your project dashboard (Ex: https://supabase.com/dashboard/project/<YOUR_PROJECT_ID>/settings/general)
+- `Project ID`: Found in the URL of your project dashboard (Ex: <https://supabase.com/dashboard/project/><YOUR_PROJECT_ID>/settings/general)
 
 While still in "Settings" click on the "API" text tab on the left.
 
@@ -216,9 +215,6 @@ In environment variables, add the following from the values you got above:
 You can also add API keys as environment variables.
 
 - `OPENAI_API_KEY`
-- `AZURE_OPENAI_API_KEY`
-- `AZURE_OPENAI_ENDPOINT`
-- `AZURE_GPT_45_VISION_NAME`
 
 For the full list of environment variables, refer to the '.env.local.example' file. If the environment variables are set for API keys, it will disable the input in the user settings.
 

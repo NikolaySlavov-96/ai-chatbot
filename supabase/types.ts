@@ -1105,12 +1105,6 @@ export type Database = {
         Row: {
           anthropic_api_key: string | null
           xAi_api_key: string | null
-          azure_openai_35_turbo_id: string | null
-          azure_openai_45_turbo_id: string | null
-          azure_openai_45_vision_id: string | null
-          azure_openai_api_key: string | null
-          azure_openai_embeddings_id: string | null
-          azure_openai_endpoint: string | null
           bio: string
           created_at: string
           display_name: string
@@ -1122,24 +1116,15 @@ export type Database = {
           image_url: string
           mistral_api_key: string | null
           openai_api_key: string | null
-          openai_organization_id: string | null
-          openrouter_api_key: string | null
           perplexity_api_key: string | null
           profile_context: string
           updated_at: string | null
-          use_azure_openai: boolean
           user_id: string
           username: string
         }
         Insert: {
           anthropic_api_key?: string | null
           xAi_api_key?: string | null
-          azure_openai_35_turbo_id?: string | null
-          azure_openai_45_turbo_id?: string | null
-          azure_openai_45_vision_id?: string | null
-          azure_openai_api_key?: string | null
-          azure_openai_embeddings_id?: string | null
-          azure_openai_endpoint?: string | null
           bio: string
           created_at?: string
           display_name: string
@@ -1151,24 +1136,15 @@ export type Database = {
           image_url: string
           mistral_api_key?: string | null
           openai_api_key?: string | null
-          openai_organization_id?: string | null
-          openrouter_api_key?: string | null
           perplexity_api_key?: string | null
           profile_context: string
           updated_at?: string | null
-          use_azure_openai: boolean
           user_id: string
           username: string
         }
         Update: {
           anthropic_api_key?: string | null
           xAi_api_key?: string | null
-          azure_openai_35_turbo_id?: string | null
-          azure_openai_45_turbo_id?: string | null
-          azure_openai_45_vision_id?: string | null
-          azure_openai_api_key?: string | null
-          azure_openai_embeddings_id?: string | null
-          azure_openai_endpoint?: string | null
           bio?: string
           created_at?: string
           display_name?: string
@@ -1180,12 +1156,9 @@ export type Database = {
           image_url?: string
           mistral_api_key?: string | null
           openai_api_key?: string | null
-          openai_organization_id?: string | null
-          openrouter_api_key?: string | null
           perplexity_api_key?: string | null
           profile_context?: string
           updated_at?: string | null
-          use_azure_openai?: boolean
           user_id?: string
           username?: string
         }

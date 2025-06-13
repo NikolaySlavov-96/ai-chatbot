@@ -8,7 +8,6 @@ import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
 import { X_AI_LLM_LIST } from "./xAi-llm-list"
 
 export const LLM_LIST: LLM[] = [
-  ...OPENAI_LLM_LIST,
   ...GOOGLE_LLM_LIST,
   ...MISTRAL_LLM_LIST,
   ...GROQ_LLM_LIST,
@@ -19,7 +18,6 @@ export const LLM_LIST: LLM[] = [
 
 export const LLM_LIST_MAP: Record<string, LLM[]> = {
   openai: OPENAI_LLM_LIST,
-  azure: OPENAI_LLM_LIST,
   google: GOOGLE_LLM_LIST,
   mistral: MISTRAL_LLM_LIST,
   groq: GROQ_LLM_LIST,
