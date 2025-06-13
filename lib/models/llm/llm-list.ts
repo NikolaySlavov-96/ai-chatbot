@@ -8,6 +8,7 @@ import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
 import { X_AI_LLM_LIST } from "./xAi-llm-list"
 
 export const LLM_LIST: LLM[] = [
+  ...OPENAI_LLM_LIST,
   ...GOOGLE_LLM_LIST,
   ...MISTRAL_LLM_LIST,
   ...GROQ_LLM_LIST,
