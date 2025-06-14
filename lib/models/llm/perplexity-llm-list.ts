@@ -40,19 +40,20 @@ const PERPLEXITY_SONAR_REASONING_PRO: LLM = {
   imageInput: false
 }
 
-const PERPLEXITY_SONAR_DEEP_RESEARCH: LLM = {
-  modelId: "sonar-deep-research",
-  modelName: "Sonar Deep Research",
-  provider: "perplexity",
-  hostedId: "sonar-deep-research",
-  platformLink: PERPLEXITY_PLATFORM_LINK,
-  imageInput: false
-}
+// TODO Nikolay: As of "14.06.2025" this model remains inaccessible for now
+// const PERPLEXITY_SONAR_DEEP_RESEARCH: LLM = {
+//   modelId: "sonar-deep-research",
+//   modelName: "Sonar Deep Research",
+//   provider: "perplexity",
+//   hostedId: "sonar-deep-research",
+//   platformLink: PERPLEXITY_PLATFORM_LINK,
+//   imageInput: false
+// }
 
 export const PERPLEXITY_LLM_LIST: LLM[] = [
   PERPLEXITY_SONAR,
   PERPLEXITY_SONAR_PRO,
   PERPLEXITY_SONAR_REASONING,
-  PERPLEXITY_SONAR_REASONING_PRO,
-  PERPLEXITY_SONAR_DEEP_RESEARCH
+  PERPLEXITY_SONAR_REASONING_PRO
+  // PERPLEXITY_SONAR_DEEP_RESEARCH,
 ]

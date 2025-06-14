@@ -261,11 +261,12 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
     MAX_CONTEXT_LENGTH: 12000
-  },
-  "sonar-deep-research": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 12000,
-    MAX_CONTEXT_LENGTH: 12000
   }
+  // TODO Nikolay: As of "14.06.2025" this model remains inaccessible for now
+  // "sonar-deep-research": {
+  //   MIN_TEMPERATURE: 0.0,
+  //   MAX_TEMPERATURE: 1.0,
+  //   MAX_TOKEN_OUTPUT_LENGTH: 12000,
+  //   MAX_CONTEXT_LENGTH: 12000
+  // }
 }

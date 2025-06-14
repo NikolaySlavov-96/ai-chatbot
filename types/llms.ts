@@ -68,7 +68,8 @@ export type PerplexityLLMID =
   | "sonar-pro" // Sonar Pro
   | "sonar-reasoning" // Sonar Reasoning
   | "sonar-reasoning-pro" // Sonar Reasoning Pro
-  | "sonar-deep-research" // Sonar Deep Research
+// TODO Nikolay: As of "14.06.2025" this model remains inaccessible for now
+// | "sonar-deep-research" // Sonar Deep Research
 
 export interface LLM {
   modelId: LLMID
