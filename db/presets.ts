@@ -1,20 +1,6 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
 
-export const getPresetById = async (presetId: string) => {
-  const { data: preset, error } = await supabase
-    .from("presets")
-    .select("*")
-    .eq("id", presetId)
-    .single()
-
-  if (!preset) {
-    throw new Error(error.message)
-  }
-
-  return preset
-}
-
 export const getPresetWorkspacesByWorkspaceId = async (workspaceId: string) => {
   const { data: workspace, error } = await supabase
     .from("workspaces")
@@ -33,49 +19,6 @@ export const getPresetWorkspacesByWorkspaceId = async (workspaceId: string) => {
   }
 
   return workspace
-}
-
-export const getPresetWorkspacesByPresetId = async (presetId: string) => {
-  const { data: preset, error } = await supabase
-    .from("presets")
-    .select(
-      `
-      id, 
-      name, 
-      workspaces (*)
-    `
-    )
-    .eq("id", presetId)
-    .single()
-
-  if (!preset) {
-    throw new Error(error.message)
-  }
-
-  return preset
-}
-
-export const createPreset = async (
-  preset: TablesInsert<"presets">,
-  workspace_id: string
-) => {
-  const { data: createdPreset, error } = await supabase
-    .from("presets")
-    .insert([preset])
-    .select("*")
-    .single()
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  await createPresetWorkspace({
-    user_id: preset.user_id,
-    preset_id: createdPreset.id,
-    workspace_id: workspace_id
-  })
-
-  return createdPreset
 }
 
 export const createPresets = async (
@@ -100,24 +43,6 @@ export const createPresets = async (
   )
 
   return createdPresets
-}
-
-export const createPresetWorkspace = async (item: {
-  user_id: string
-  preset_id: string
-  workspace_id: string
-}) => {
-  const { data: createdPresetWorkspace, error } = await supabase
-    .from("preset_workspaces")
-    .insert([item])
-    .select("*")
-    .single()
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  return createdPresetWorkspace
 }
 
 export const createPresetWorkspaces = async (
@@ -149,29 +74,4 @@ export const updatePreset = async (
   }
 
   return updatedPreset
-}
-
-export const deletePreset = async (presetId: string) => {
-  const { error } = await supabase.from("presets").delete().eq("id", presetId)
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  return true
-}
-
-export const deletePresetWorkspace = async (
-  presetId: string,
-  workspaceId: string
-) => {
-  const { error } = await supabase
-    .from("preset_workspaces")
-    .delete()
-    .eq("preset_id", presetId)
-    .eq("workspace_id", workspaceId)
-
-  if (error) throw new Error(error.message)
-
-  return true
 }

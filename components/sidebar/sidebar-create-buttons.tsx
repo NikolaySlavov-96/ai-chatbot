@@ -3,9 +3,8 @@ import { ChatbotUIContext } from "@/context/context"
 import { createFolder } from "@/db/folders"
 import { ContentType } from "@/types"
 import { IconFolderPlus, IconPlus } from "@tabler/icons-react"
-import { FC, useContext, useState } from "react"
+import { FC, useContext } from "react"
 import { Button } from "../ui/button"
-import { CreatePrompt } from "./items/prompts/create-prompt"
 
 interface SidebarCreateButtonsProps {
   contentType: ContentType
@@ -19,8 +18,6 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
   const { profile, selectedWorkspace, folders, setFolders } =
     useContext(ChatbotUIContext)
   const { handleNewChat } = useChatHandler()
-
-  const [isCreatingPrompt, setIsCreatingPrompt] = useState(false)
 
   const handleCreateFolder = async () => {
     if (!profile) return
@@ -61,13 +58,6 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
         <Button className="size-[36px] p-1" onClick={handleCreateFolder}>
           <IconFolderPlus size={20} />
         </Button>
-      )}
-
-      {isCreatingPrompt && (
-        <CreatePrompt
-          isOpen={isCreatingPrompt}
-          onOpenChange={setIsCreatingPrompt}
-        />
       )}
     </div>
   )

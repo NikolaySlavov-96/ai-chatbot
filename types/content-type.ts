@@ -1,1 +1,1 @@
-export type ContentType = "chats" | "prompts"
+export type ContentType = "chats"

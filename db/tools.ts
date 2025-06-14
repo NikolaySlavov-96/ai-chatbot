@@ -1,20 +1,6 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
 
-export const getToolById = async (toolId: string) => {
-  const { data: tool, error } = await supabase
-    .from("tools")
-    .select("*")
-    .eq("id", toolId)
-    .single()
-
-  if (!tool) {
-    throw new Error(error.message)
-  }
-
-  return tool
-}
-
 export const getToolWorkspacesByWorkspaceId = async (workspaceId: string) => {
   const { data: workspace, error } = await supabase
     .from("workspaces")
@@ -33,49 +19,6 @@ export const getToolWorkspacesByWorkspaceId = async (workspaceId: string) => {
   }
 
   return workspace
-}
-
-export const getToolWorkspacesByToolId = async (toolId: string) => {
-  const { data: tool, error } = await supabase
-    .from("tools")
-    .select(
-      `
-      id, 
-      name, 
-      workspaces (*)
-    `
-    )
-    .eq("id", toolId)
-    .single()
-
-  if (!tool) {
-    throw new Error(error.message)
-  }
-
-  return tool
-}
-
-export const createTool = async (
-  tool: TablesInsert<"tools">,
-  workspace_id: string
-) => {
-  const { data: createdTool, error } = await supabase
-    .from("tools")
-    .insert([tool])
-    .select("*")
-    .single()
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  await createToolWorkspace({
-    user_id: createdTool.user_id,
-    tool_id: createdTool.id,
-    workspace_id
-  })
-
-  return createdTool
 }
 
 export const createTools = async (
@@ -100,24 +43,6 @@ export const createTools = async (
   )
 
   return createdTools
-}
-
-export const createToolWorkspace = async (item: {
-  user_id: string
-  tool_id: string
-  workspace_id: string
-}) => {
-  const { data: createdToolWorkspace, error } = await supabase
-    .from("tool_workspaces")
-    .insert([item])
-    .select("*")
-    .single()
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  return createdToolWorkspace
 }
 
 export const createToolWorkspaces = async (
@@ -149,29 +74,4 @@ export const updateTool = async (
   }
 
   return updatedTool
-}
-
-export const deleteTool = async (toolId: string) => {
-  const { error } = await supabase.from("tools").delete().eq("id", toolId)
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  return true
-}
-
-export const deleteToolWorkspace = async (
-  toolId: string,
-  workspaceId: string
-) => {
-  const { error } = await supabase
-    .from("tool_workspaces")
-    .delete()
-    .eq("tool_id", toolId)
-    .eq("workspace_id", workspaceId)
-
-  if (error) throw new Error(error.message)
-
-  return true
 }

@@ -1,6 +1,5 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
-import mammoth from "mammoth"
 import { toast } from "sonner"
 import { uploadFile } from "./storage/files"
 
@@ -36,52 +35,6 @@ export const getFileWorkspacesByWorkspaceId = async (workspaceId: string) => {
   }
 
   return workspace
-}
-
-export const getFileWorkspacesByFileId = async (fileId: string) => {
-  const { data: file, error } = await supabase
-    .from("files")
-    .select(
-      `
-      id, 
-      name, 
-      workspaces (*)
-    `
-    )
-    .eq("id", fileId)
-    .single()
-
-  if (!file) {
-    throw new Error(error.message)
-  }
-
-  return file
-}
-
-export const createFileBasedOnExtension = async (
-  file: File,
-  fileRecord: TablesInsert<"files">,
-  workspace_id: string,
-  embeddingsProvider: "openai" | "local"
-) => {
-  const fileExtension = file.name.split(".").pop()
-
-  if (fileExtension === "docx") {
-    const arrayBuffer = await file.arrayBuffer()
-    const result = await mammoth.extractRawText({
-      arrayBuffer
-    })
-
-    return createDocXFile(
-      result.value,
-      file,
-      fileRecord,
-      workspace_id,
-      embeddingsProvider
-    )
-  } else {
-    return createFile(file, fileRecord, workspace_id, embeddingsProvider)
-  }
 }
 
 // For non-docx files
@@ -299,21 +252,6 @@ export const deleteFile = async (fileId: string) => {
   if (error) {
     throw new Error(error.message)
   }
-
-  return true
-}
-
-export const deleteFileWorkspace = async (
-  fileId: string,
-  workspaceId: string
-) => {
-  const { error } = await supabase
-    .from("file_workspaces")
-    .delete()
-    .eq("file_id", fileId)
-    .eq("workspace_id", workspaceId)
-
-  if (error) throw new Error(error.message)
 
   return true
 }
