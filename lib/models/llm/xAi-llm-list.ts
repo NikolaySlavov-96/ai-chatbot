@@ -3,6 +3,15 @@ import { LLM } from "@/types"
 const X_AI_PLATFORM_LINK = "https://api.x.ai/v1"
 
 // xAi Grok Models -----------------------------
+const GROK_4_LATEST: LLM = {
+  modelId: "grok-4-latest",
+  modelName: "Grok 4",
+  provider: "xAi",
+  hostedId: "grok-4-latest",
+  platformLink: X_AI_PLATFORM_LINK,
+  imageInput: false
+}
+
 const GROK_3_LATEST: LLM = {
   modelId: "grok-3-latest",
   modelName: "Grok 3",
@@ -48,6 +57,7 @@ const GROK_2_LATEST: LLM = {
 }
 
 export const X_AI_LLM_LIST: LLM[] = [
+  GROK_4_LATEST,
   GROK_3_LATEST,
   GROK_3_MINI_LATEST,
   GROK_2_VISION_LATEST,

@@ -49,6 +49,13 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   },
 
   // x Ai Models
+  "grok-4-latest": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
+    MAX_CONTEXT_LENGTH: 20000
+  },
+
   "grok-3-latest": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,

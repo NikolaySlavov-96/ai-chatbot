@@ -37,6 +37,7 @@ export type AnthropicLLMID =
   | "claude-sonnet-4-20250514" // Claude Sonnet
 
 export type xAiLLMID =
+  | "grok-4-latest"
   | "grok-3-latest"
   | "grok-3-mini-latest"
   | "grok-2-vision-latest"
